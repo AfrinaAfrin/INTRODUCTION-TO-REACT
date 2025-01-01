@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declarative vs Imperative Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.production.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.production.min.js"></script>
+</head>
+<body>
+
+    <h1>Declarative vs Imperative Example</h1>
+    
+     
+    <div id="imperative-example"></div>
+
+     
+    <div id="react-example"></div>
+
+    <script>
+        
+        const imperativeDiv = document.getElementById('imperative-example');
+        const pElement = document.createElement('p');
+        pElement.textContent = "Hello, World! (Imperative Approach)";
+        imperativeDiv.appendChild(pElement);
+    </script>
+
+    <script>
+        
+        const App = () => {
+            return React.createElement('p', null, "Hello, World! (Declarative Approach)");
+        };
+
+        
+        const reactDiv = document.getElementById('react-example');
+        ReactDOM.render(React.createElement(App), reactDiv);
+    </script>
+
+</body>
+</html>
